@@ -1,0 +1,17 @@
+<html>
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Django 操作MySQL数据库</title>
+</head>
+<body>
+<p>emps:{{emps}}</p>
+
+这里调用重写的内置方法__unicode__()或__str__显示每个emp对象:
+{%for emp in emps%}
+<li>{{forloop.counter}}-{{emp}}-{{emp.name}}</li>
+{%endfor%}
+
+
+</body>
+</html>

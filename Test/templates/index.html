@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{title}}</title>
+</head>
+<body>
+<h1>模板变量    可传递数据类型：基本数据类型、字典、对象、对象的属性、对象的方法（没有参数）、列表</h1>
+
+<h2>Hello {Dict}:</h2>
+{{user}}
+<li> name:{{user.name}}</li>
+<li>age:{{user.age}}</li>
+<li> sex:{{user.sex}}</li>
+
+&nbsp
+
+<h2>Hello Object():</h2>
+{{person}}
+<li> name:{{person.name}}</li>
+<li>age:{{person.age}}</li>
+<li> sex:{{person.sex}}</li>
+<div>{{person.name}} Say():{{person.Say}}</div>
+
+&nbsp
+
+<h2>Hello [list]:</h2>
+{{book_list}}
+<li>book_list.0:{{book_list.0}}</li>
+<li>book_list.1:{{book_list.1}}</li>
+<li>book_list.2:{{book_list.2}}</li>
+<li>book_list.3:{{book_list.3}}</li>
+
+#############################################
+
+<h1>模板标签：</h1>
+
+<h2>if...else...endif 标签</h2>
+{% if userForIF%}
+<li> name:{{userForIF.name}}</li>
+<li>age:{{userForIF.age}}</li>
+<li> sex:{{userForIF.sex}}</li>
+{% else%}
+用户不存在！
+{%endif %}
+
+<h2>for 标签</h2>
+{%for book in book_list%}
+<li>{{forloop.counter}}.{{book}}</li>
+{%endfor%}
+
+&nbsp
+
+{%for k,v  in user.items%}
+<li>{{forloop.counter}}.{{k}}:{{v}}</li>
+{%empty%}
+如果集合为空，则执行empty标签
+{%endfor%}
+
+</body>
+</html>
